@@ -1,0 +1,54 @@
+<%- include('./parts/header')%>
+
+<title>Welcome</title>
+</head>
+<body>
+<%- include('./parts/nav')%>
+
+<div class="container">
+    
+        <div class="row">
+            <!--search -->
+            <div class="col-md-9">
+                <form action="/search" method="GET">
+                    <input class="form-control w-75 d-inline " type="search" placeholder="Search" name="search" aria-label="Search">
+                    <button class="btn btn-outline-warning " type="submit">Search</button>
+                </form> 
+            </div>
+            <!-- form of artical modal -->
+            <div class="col-md-3">
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#addNewArtical">
+                    add New Artical
+                </button>
+                <%- include('./addArticalModal')%>
+            </div>
+        </div>
+</div>
+
+<div class="container py-5">
+    <div class="row">
+        <%for(let res=0; res < result.length;res++){%>
+            <div class="col-md-4 py-3">
+                <div class="card shadow text-center h-100">
+                    <div class="card-header">
+                        <%= result[res].articalTitle%>
+                    </div>
+                    <div class="card-body p-4">
+                        <p class="card-text my-2 articalContent"><%= result[res].articalContent%></p>
+                        
+                    </div>
+                    <div class="my-3">
+                        <a href="/readMore/<%= result[res].id%>" class="btn btn-dark py-1 px-2 text-capitalize">read More </a>
+                        <a href="/edit/<%= result[res].id%>" class="btn btn-secondary py-1 px-3 text-capitalize">edit</a>
+                        <a href="/delete/<%= result[res].id%>" class="btn btn-danger py-1 px-3 text-capitalize">delete</a>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <%= result[res].publishDate.toDateString()%>
+                    </div>
+                </div>
+            </div>
+        <%}%>
+    </div>
+</div>
+
+<%- include('./parts/footer')%>

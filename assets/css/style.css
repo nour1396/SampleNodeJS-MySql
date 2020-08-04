@@ -1,0 +1,48 @@
+body {
+    font-family: 'Roboto'!important;
+}
+
+textarea {
+    resize: none;
+}
+
+.modal-dialog {
+    max-width: 100% !important;
+}
+
+.modal-content {
+    border: none !important;
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+}
+
+.displayBlock {
+    display: block;
+}
+
+i,
+a {
+    cursor: pointer;
+}
+
+.dirRight {
+    text-align: right;
+}
+
+.dirLeft {
+    text-align: left;
+}
+
+.articalContent {
+    clip: auto;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    text-overflow: ellipsis;
+}

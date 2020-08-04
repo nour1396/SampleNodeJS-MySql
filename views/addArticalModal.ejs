@@ -1,0 +1,27 @@
+
+<!-- Modal -->
+<div class="modal fade" id="addNewArtical" tabindex="-1" role="dialog" aria-labelledby="addNewArticalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content w-50 m-auto">
+            <div class="modal-header">
+                <h5 class="modal-title text-capitalize font-weight-bold" id="addNewArticalLabel">new artical</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form action="/addNewArtical" method="POST">
+                <div class="modal-body">
+                        <div class="container p-5">
+                            <input type="text" class="form-control my-1" name="articalTitle" placeholder="enter title of artical">
+                            <textarea rows="10" class="form-control my-1" name="articalContent" placeholder="enter artical Content"></textarea>
+                        </div>
+                    
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                    <button type="submit" class="btn btn-dark">add</button>
+                </div>
+            </form> 
+        </div>
+    </div>
+</div>
