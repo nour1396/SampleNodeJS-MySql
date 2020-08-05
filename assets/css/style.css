@@ -39,10 +39,15 @@ a {
     text-align: left;
 }
 
-.articalContent {
+.articleContent {
     clip: auto;
     overflow: hidden;
     white-space: nowrap;
     width: 100%;
     text-overflow: ellipsis;
+}
+
+.navTitle {
+    font-size: 2.1rem;
+    padding: 0;
 }

@@ -11,16 +11,20 @@
             <!--search -->
             <div class="col-md-9">
                 <form action="/search" method="GET">
-                    <input class="form-control w-75 d-inline " type="search" placeholder="Search" name="search" aria-label="Search">
+                    <input class="form-control w-50 d-inline " type="search" placeholder="Search" name="search" aria-label="Search">
+                    <select class="form-control w-25 d-inline" name="searchType">
+                        <option value="articleTitle">article title</option>
+                        <option value="articleContent">article content</option>
+                    </select>
                     <button class="btn btn-outline-warning " type="submit">Search</button>
                 </form> 
             </div>
-            <!-- form of artical modal -->
+            <!-- form of article modal -->
             <div class="col-md-3">
-                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#addNewArtical">
-                    add New Artical
+                <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#addNewArticle">
+                    add New article
                 </button>
-                <%- include('./addArticalModal')%>
+                <%- include('./addArticleModal')%>
             </div>
         </div>
 </div>
@@ -31,10 +35,10 @@
             <div class="col-md-4 py-3">
                 <div class="card shadow text-center h-100">
                     <div class="card-header">
-                        <%= result[res].articalTitle%>
+                        <%= result[res].articleTitle%>
                     </div>
                     <div class="card-body p-4">
-                        <p class="card-text my-2 articalContent"><%= result[res].articalContent%></p>
+                        <p class="card-text my-2 articleContent"><%= result[res].articleContent%></p>
                         
                     </div>
                     <div class="my-3">

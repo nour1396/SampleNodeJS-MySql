@@ -1,0 +1,25 @@
+<%- include('parts/header')%>
+
+<title>Welcome</title>
+</head>
+<body>
+<%- include('parts/nav')%>
+
+<div class="modal-content w-50 m-auto">
+    <div class="modal-header">
+        <h5 class="modal-title text-capitalize font-weight-bold" id="addNewArticleLabel">edit article</h5>
+    </div>
+    <form action="/editArticle/<%=result[0].id %>" method="POST">
+        <div class="modal-body">
+            <div class="container p-5">
+                <input type="text" class="form-control my-1" name="articleTitle" placeholder="enter title of article" value="<%=result[0].articleTitle %>">
+                <textarea rows="10" class="form-control my-1" name="articleContent" placeholder="enter article Content"><%=result[0].articleContent %></textarea>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <button type="submit" class="btn btn-dark text-capitalize">update</button>
+        </div>
+    </form> 
+</div>
+
+<%- include('parts/footer')%>

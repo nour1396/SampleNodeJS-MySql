@@ -3,7 +3,7 @@ const app = express();
 const path = require('path');
 const bodyParser = require('body-parser');
 const port = 1996;
-const articalRouter = require('./routing/artical.routes');
+const articleRouter = require('./routing/article.routes');
 const mysql = require('./database/db');
 
 //static path for css and javascript files
@@ -16,12 +16,12 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.set('view engine', 'ejs');
 
 //routing files
-app.use(articalRouter);
+app.use(articleRouter);
 
 //get home page / 
 app.get('/', (req, res) => {
-    //show all articals in db 
-    mysql.execute(`SELECT * FROM blog`).then(([result]) => {
+    //show all articles in db 
+    mysql.execute(`SELECT * FROM blogs`).then(([result]) => {
         res.render('index', { result });
     })
 })
