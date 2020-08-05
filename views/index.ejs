@@ -9,7 +9,7 @@
     
         <div class="row">
             <!--search -->
-            <div class="col-md-9">
+            <div class="col-md-10">
                 <form action="/search" method="GET">
                     <input class="form-control w-50 d-inline " type="search" placeholder="Search" name="search" aria-label="Search">
                     <select class="form-control w-25 d-inline" name="searchType">
@@ -20,7 +20,7 @@
                 </form> 
             </div>
             <!-- form of article modal -->
-            <div class="col-md-3">
+            <div class="col-md-2">
                 <button type="button" class="btn btn-dark" data-toggle="modal" data-target="#addNewArticle">
                     add New article
                 </button>
@@ -34,20 +34,21 @@
         <%for(let res=0; res < result.length;res++){%>
             <div class="col-md-4 py-3">
                 <div class="card shadow text-center h-100">
-                    <div class="card-header">
+                    <div class="card-header font-weight-bold">
                         <%= result[res].articleTitle%>
                     </div>
                     <div class="card-body p-4">
                         <p class="card-text my-2 articleContent"><%= result[res].articleContent%></p>
                         
                     </div>
-                    <div class="my-3">
+                    <div class="mb-3">
                         <a href="/readMore/<%= result[res].id%>" class="btn btn-dark py-1 px-2 text-capitalize">read More </a>
-                        <a href="/edit/<%= result[res].id%>" class="btn btn-secondary py-1 px-3 text-capitalize">edit</a>
-                        <a href="/delete/<%= result[res].id%>" class="btn btn-danger py-1 px-3 text-capitalize">delete</a>
+                        <a href="/edit/<%= result[res].id%>" class="btn btn-secondary py-1 px-2 text-capitalize">edit</a>
+                        <a href="/delete/<%= result[res].id%>" class="btn btn-danger py-1 px-2 text-capitalize">delete</a>
                     </div>
-                    <div class="card-footer text-muted">
-                        <%= result[res].publishDate.toDateString()%>
+                    <div class="card-footer d-flex justify-content-between">
+                        <small ><%= result[res].publishDate.toDateString()%> </small>
+                        <small ><%= result[res].publishDate.toLocaleTimeString()%></small>
                     </div>
                 </div>
             </div>
