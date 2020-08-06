@@ -14,8 +14,13 @@
                         <%= result[res].articleTitle%>
                     </div>
                     <div class="card-body p-4">
-                        <p class="card-text text-left my-2"><%= result[res].articleContent%></p>
+                        <p class="card-text text-left my-2 articleContent"><%= result[res].articleContent%></p>
                         
+                    </div>
+                    <div class="mb-3">
+                        <a href="/readMore/<%= result[res].id%>" class="btn btn-dark py-1 px-2 text-capitalize">read More </a>
+                        <a href="/edit/<%= result[res].id%>" class="btn btn-secondary py-1 px-2 text-capitalize">edit</a>
+                        <a href="/delete/<%= result[res].id%>" class="btn btn-danger py-1 px-2 text-capitalize">delete</a>
                     </div>
                     <div class="card-footer text-muted d-flex justify-content-between">
                         <small ><%= result[res].publishDate.toDateString()%> </small>

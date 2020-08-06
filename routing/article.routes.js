@@ -56,7 +56,7 @@ articleRouter.get('/search', async(req, res) => {
     let searchType = req.query.searchType;
     if (searchType.constructor == String) {
         await mysql.execute(`SELECT * FROM blogs WHERE ${searchType} LIKE '%${search}%'`).then(([result]) => {
-            res.render('readMorearticle', { result });
+            res.render('searchArticle', { result });
         })
     } else {
         let searchTypeArray = [];
@@ -64,7 +64,7 @@ articleRouter.get('/search', async(req, res) => {
             searchTypeArray.push(h)
         })
         await mysql.execute(`SELECT * FROM blogs WHERE ${searchTypeArray[0]} LIKE '%${search}%' AND ${searchTypeArray[1]} LIKE '%${search}%' `).then(([result]) => {
-            res.render('readMorearticle', { result });
+            res.render('searchArticle', { result });
         })
     }
 });
