@@ -49,13 +49,24 @@ articleRouter.get('/readMore/:id', async(req, res) => {
         res.render('readMorearticle', { result });
     })
 });
-//sarch in titles from blogs table
+
+//sarch in titles or content or both from blogs table
 articleRouter.get('/search', async(req, res) => {
     let search = req.query.search;
     let searchType = req.query.searchType;
-    await mysql.execute(`SELECT * FROM blogs WHERE ${searchType} LIKE '%${search}%'`).then(([result]) => {
-        res.render('readMorearticle', { result });
-    })
+    if (searchType.constructor == String) {
+        await mysql.execute(`SELECT * FROM blogs WHERE ${searchType} LIKE '%${search}%'`).then(([result]) => {
+            res.render('readMorearticle', { result });
+        })
+    } else {
+        let searchTypeArray = [];
+        searchType.forEach(h => {
+            searchTypeArray.push(h)
+        })
+        await mysql.execute(`SELECT * FROM blogs WHERE ${searchTypeArray[0]} LIKE '%${search}%' AND ${searchTypeArray[1]} LIKE '%${search}%' `).then(([result]) => {
+            res.render('readMorearticle', { result });
+        })
+    }
 });
 
 //export module to be used in server file

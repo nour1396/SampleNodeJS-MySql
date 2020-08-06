@@ -12,10 +12,20 @@
             <div class="col-md-10">
                 <form action="/search" method="GET">
                     <input class="form-control w-50 d-inline " type="search" placeholder="Search" name="search" aria-label="Search">
-                    <select class="form-control w-25 d-inline" name="searchType">
+                    <!--<select class="form-control w-25 d-inline" name="searchType" multiple>
                         <option value="articleTitle">article title</option>
                         <option value="articleContent">article content</option>
-                    </select>
+                    </select>-->
+                    <div class="form-group d-inline px-3">
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox1" name="searchType" value="articleTitle">
+                        <label class="form-check-label" for="inlineCheckbox1">articleTitle</label>
+                        </div>
+                        <div class="form-check form-check-inline">
+                        <input class="form-check-input" type="checkbox" id="inlineCheckbox2" name="searchType" value="articleContent">
+                        <label class="form-check-label" for="inlineCheckbox2">articleContent</label>
+                        </div>
+                    </div>
                     <button class="btn btn-outline-warning " type="submit">Search</button>
                 </form> 
             </div>
