@@ -37,8 +37,8 @@
                     <div class="card-header font-weight-bold">
                         <%= result[res].articleTitle%>
                     </div>
-                    <div class="card-body p-4">
-                        <p class="card-text my-2 articleContent"><%= result[res].articleContent%></p>
+                    <div class="card-body px-4">
+                        <p class="card-text text-left my-2 articleContent"><%= result[res].articleContent%></p>
                         
                     </div>
                     <div class="mb-3">
@@ -46,7 +46,7 @@
                         <a href="/edit/<%= result[res].id%>" class="btn btn-secondary py-1 px-2 text-capitalize">edit</a>
                         <a href="/delete/<%= result[res].id%>" class="btn btn-danger py-1 px-2 text-capitalize">delete</a>
                     </div>
-                    <div class="card-footer d-flex justify-content-between">
+                    <div class="card-footer d-flex justify-content-between text-muted">
                         <small ><%= result[res].publishDate.toDateString()%> </small>
                         <small ><%= result[res].publishDate.toLocaleTimeString()%></small>
                     </div>
